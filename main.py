@@ -19,8 +19,6 @@ html = """<!DOCTYPE html>
         <title>Message Board</title>
         <meta name="description" content="A simple message board written in python">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <link rel="shortcut icon" type="image/x-icon" href="favicon.ico" />
-        <link rel="icon" type="image/x-icon" href="favicon.ico" />
         <style>
         body {{
             margin: 10px auto;
@@ -61,12 +59,9 @@ html = """<!DOCTYPE html>
           <input type="submit" value="Submit">
         </form>
         <hr>
-        <small><a href="https://github.com/artizirk/message-board" style="color:black;">Source code</a></small>,  <small>Good luck!</small>
     </body>
 </html>
 """
-
-favicon = b'AAABAAEAEBAQAAEABAAoAQAAFgAAACgAAAAQAAAAIAAAAAEABAAAAAAAgAAAAAAAAAAAAAAAEAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAD//wAA/4cAAP+7AAD/uwAA/7sAAP+HAAD/uwAAvrsAAL67AAC+hwAAvv8AALb/AACi/wAAiP8AAJz/AAD//wAA'
 
 default = [
     "divide-by-zero error",
@@ -121,11 +116,6 @@ def application(env, start_response):
         start_response("303 See Other", [('Content-Type', 'application/json'),
                                          ('Location', '/')])
         return [b"OK"]
-
-    if env["PATH_INFO"] == "/favicon.ico":
-        start_response('200 OK', [('Content-Type', 'image/x-icon')])
-        return [base64.b64decode(favicon)]
-
 
     if env["PATH_INFO"] == "/json" or 'HTTP_USER_AGENT' in env and env['HTTP_USER_AGENT'].startswith(('python-requests', 'HTTPie', 'curl', 'Wget')):
         start_response("200 OK", [('Content-Type', 'application/json')])
