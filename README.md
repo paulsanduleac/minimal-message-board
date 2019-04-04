@@ -1,6 +1,7 @@
 # message-board
-A project for wics-2019-dev. Original Source taken from https://github.com/artizirk/message-board
-MongoDB WiCS 2019 Development Practices
+A project for MongoDB WiCS 2019 Development Practices.
+
+Original source taken from https://github.com/artizirk/message-board
 
 # Things you'll need:
  - Download and intall Git: https://git-scm.com/
