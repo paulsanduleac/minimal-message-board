@@ -60,13 +60,13 @@ html = """<!DOCTYPE html>
 """
 
 default = [
-    "divide-by-zero error",
-    "not enough memory, go get system upgrade",
-    "need to wrap system in aluminum foil to fix problem",
-    "Typo in the code"
+    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. P Quis lectus nulla at volutpat diam ut venenatis tellus in.",
+    "Porttitor massa id neque aliquam vestibulum morbi blandit cursus. Aliquet risus feugiat in ante metus dictum at tempor commodo. Fermentum odio eu feugiat pretium nibh ipsum.",
+    "Curabitur gravida arcu ac tortor dignissim convallis aenean et. Neque vitae tempus quam pellentesque. Non diam phasellus vestibulum lorem sed risus. Tortor id aliquet lectus proin nibh nisl condimentum.",
+    "Accumsan tortor posuere ac ut consequat semper viverra nam libero. Leo duis ut diam quam nulla porttitor"
 ]
 
-default = ["BOFH excuse #{}: {}".format(i, x) for i, x in enumerate(default)]
+default = ["Example entry #{}: {}".format(i, x) for i, x in enumerate(default)]
 
 messages = deque(default, maxlen=max_nr_messages)
 
